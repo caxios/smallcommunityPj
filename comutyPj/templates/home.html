@@ -1,34 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    .room-container {
+        display : gird;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
 
-    <div class='home-container'>
-        <div>
-            <h3>Browse Topics</h3>
-            <hr />
-            {% for topic in topics %}
-                <div>
-                    <a href='{% url "main-home" %}?q={{topic.name}}'>{{topic.name}}</a>
-                </div>
-            {% endfor %}
-        </div>
-        
-        <h1>Home</h1>
+<div class='home-container'>
+    <div>
+        {% include 'topics_component.html' %}
+    </div>
+    
+    <h1>Home</h1>
 
-        <div>
-            <a href="{% url 'create-room' %}">Create New Room</a>
-        </div>
-        {% for room in rooms %}
-            <div>
-                <div>
-                    <a href="{% url 'update-room' room.id %}">edit</a>
-                    <a href="{% url 'delete-room' room.id %}">delete</a>
-                    <span>@{{ room.host.username }}</span>
-                    <h5>{{room.id}}--<a href="{% url 'room' room.id %}">{{room.topic}}</a></h5>
-                    <small>{{ room.topic.name }}</small>
-                    <hr/>
-                </div>
-            </div>
-        {% endfor %}
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        <a href="{% url 'create-room' %}">Create New Room</a>
     </div>
 
+        <div>
+            {% for room in rooms %}
+            <div>
+                {% include 'feed_component.html' %}
+            </div>
+            {% endfor %}
+            <div>
+                {% include 'activity_component.html' %}
+            </div>
+        </div>
+</div>
 {% endblock %}
