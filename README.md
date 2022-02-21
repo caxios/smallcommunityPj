@@ -2,9 +2,9 @@
 
 It is just my tiny work.
 
-This project is about making "very" simple twitter-like feed web.
+This project is about making "very" simple discord-like feed web but cannot use voice chatting only keyboard chatting available.
 
-
+you can make your own chat room, can chat in chat room 
 
 
 
