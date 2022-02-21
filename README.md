@@ -1,9 +1,19 @@
 # smallcommunityPj
 
-It is just my tiny work
+It is just my tiny work.
 
-I used django framework for this small practice
+This project is about making "very" simple twitter-like feed web.
+
+
+
+
+
+I used django framework for this small practice,
+
+because I thought that django is pretty good and fast for developing message-board-website.
+
+
+
+
 
 Also I used django virual enviornment because i heard somewhere that virutal enviorment reduces annoying version control efforts
-
-This practice is about making "very" simple twitter-like feed web app.
